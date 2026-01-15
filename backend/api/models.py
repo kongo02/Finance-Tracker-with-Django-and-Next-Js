@@ -5,6 +5,7 @@ from django.db import models
 class Transaction(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     text = models.CharField(max_length=200)
+    category = models.CharField(max_length=50, default="Other")  # NEW field
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     created_at = models.DateTimeField(auto_now_add=True)
     
