@@ -1,0 +1,92 @@
+:root {
+  --bg: #f4f4f4;
+  --card: #ffffff;
+  --text: #222;
+  --green: #4ade80;
+  --red: #f87171;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #f8fafc;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions button,
+.add {
+  background: var(--card);
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.left,
+.right {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.stat {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  animation: pop 0.4s ease;
+}
+
+.stat.income {
+  border-left: 6px solid var(--green);
+}
+
+.stat.expense {
+  border-left: 6px solid var(--red);
+}
+
+.stat.balance {
+  border-left: 6px solid white;
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
